@@ -1,6 +1,3 @@
-variable "email" {}
-variable "token" {}
-
 variable "domain" {}
 
 variable "record" {
@@ -22,9 +19,6 @@ variable "ttl" {
 
 module "cloudfare" {
   source = "../"
-
-  email = "${var.email}"
-  token = "${var.token}"
 
   domain = "${var.domain}"
   record = "${var.record}"
