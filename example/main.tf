@@ -3,12 +3,13 @@ variable "token" {}
 
 variable "domain" {}
 
-variable "name" {
-  default = "terraform"
-}
+variable "record" {
+  type = "map"
 
-variable "value" {
-  default = "127.0.0.1"
+  default = {
+    terraform1 = "127.0.0.1"
+    terraform2 = "127.0.0.2"
+  }
 }
 
 variable "type" {
@@ -26,8 +27,7 @@ module "cloudfare" {
   token = "${var.token}"
 
   domain = "${var.domain}"
-  name   = "${var.name}"
-  value  = "${var.value}"
+  record = "${var.record}"
   type   = "${var.type}"
   ttl    = "${var.ttl}"
 }
