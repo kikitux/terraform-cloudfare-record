@@ -5,7 +5,7 @@ variable "record" {
 }
 
 variable "priotity" {
-  default = 0
+  default = "0"
 }
 
 variable "type" {}
