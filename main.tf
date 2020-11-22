@@ -11,6 +11,15 @@ variable "priority" {
 variable "type" {}
 variable "ttl" {}
 
+terraform {
+  required_providers {
+    cloudflare = {
+      source = "cloudflare/cloudflare"
+    }
+  }
+  required_version = ">= 0.13"
+}
+
 # Add a record to the domain
 resource "cloudflare_record" "record" {
   domain   = var.domain
