@@ -28,5 +28,5 @@ resource "cloudflare_record" "record" {
   type     = var.type
   for_each = var.record
   name     = each.key
-  value    = each.value
+  content  = each.value
 }
