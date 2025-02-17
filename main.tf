@@ -21,7 +21,7 @@ terraform {
 }
 
 # Add a record to the domain
-resource "cloudflare_record" "record" {
+resource "cloudflare_dns_record" "record" {
   zone_id   = var.zone_id
   priority = var.priority
   ttl      = var.ttl
